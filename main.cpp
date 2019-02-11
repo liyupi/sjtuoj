@@ -12,19 +12,20 @@ int main() {
         for (int i = 0; i < n; ++i) {
             cin >> num[i];
         }
-        int max = -1;
-        int maxSum = num[0] + num[1];
+        int sum = num[0] + num[1];
+        int maxSum = sum;
         for (int i = 2; i < n; ++i) {
             // maxSum = num[i - 1] + num[i - 2] + ...，即前n项最大子序列的和，若大于num[i - 1]，说明前面i - 2项的和为正，可以保留
             // 否则丢弃前i - 2项
             // maxSum也可换成dp[i]数组，表示以第i个数结尾的最大子序列和
-            maxSum = maxSum > num[i - 1] ? maxSum + num[i] : num[i - 1] + num[i];
-            max = maxSum > max ? maxSum : max;
+            sum = sum > num[i - 1] ? sum + num[i] : num[i - 1] + num[i];
+            maxSum = sum > maxSum ? sum : maxSum;
         }
-        if (max < 0) {
+        if (maxSum <= 0) {
             cout << "Game Over" << endl;
         } else {
-            cout << max << endl;
+            cout << maxSum << endl;
         }
     }
+    return 0;
 }
