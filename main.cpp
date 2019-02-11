@@ -16,12 +16,7 @@ int main() {
     int sum = -1;
     for (int i = a; i <= l; i++) {
         for (int j = b; j <= w; j++) {
-            int t = 0;
-            if (i == a) {
-                t = p[i][j] - p[i][j - b];
-            } else {
-                t = p[i][j] - p[i][j - b] - p[i - a][j] + p[i - a][j - b];
-            }
+            int t = p[i][j] - p[i][j - b] - p[i - a][j] + p[i - a][j - b];
             sum = t > sum ? t : sum;
         }
     }
