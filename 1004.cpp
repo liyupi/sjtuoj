@@ -1,3 +1,4 @@
+// easy math
 #include<iostream>
 
 using namespace std;
