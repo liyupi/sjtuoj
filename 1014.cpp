@@ -1,4 +1,4 @@
-// 二叉树左孩子下标等于父节点下标 * 2，右孩子再+1
+// 大整数加法
 #include <iostream>
 #include <cstring>
 
